@@ -65,6 +65,21 @@ public class EmployeeRepositoryTestCase {
 		Assert.assertTrue(e.getEnabled());
 	}
 
+	@Test
+	public void getSalaryTest() throws Exception {
+		Integer actual = repository.getSalary(employeeId);
+		Assert.assertEquals(1000, (int) actual);
+	}
+
+	@Test
+	public void disableEmployeeTest() throws Exception {
+		Integer disable = repository.disable(employeeId);
+		Assert.assertEquals(1, (int) disable);
+		
+		Employee e = em.find(Employee.class, employeeId);
+		Assert.assertFalse(e.getEnabled());
+	}
+
 	@After
 	public void commitTransaction() throws Exception {
 		utx.begin();

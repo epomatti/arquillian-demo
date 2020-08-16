@@ -25,7 +25,7 @@ public class EmployeeService {
 	}
 
 	public Integer getEmployeeSalary(Integer id) {
-		return em.find(Employee.class, id).getSalary();
+		return repository.getSalary(id);
 	}
 	
 	public void layoffEmployee(Integer id) {

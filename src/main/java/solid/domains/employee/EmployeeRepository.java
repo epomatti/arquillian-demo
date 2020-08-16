@@ -20,6 +20,10 @@ public class EmployeeRepository {
 		return employee.getId();
 	}
 
+	public Integer getSalary(Integer id) {
+		return em.find(Employee.class, id).getSalary();
+	}
+
 	public Integer disable(Integer employeeId) {
 		Query query = em.createNamedQuery("Employee.disable");
 		query.setParameter("id", employeeId);
