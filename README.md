@@ -31,3 +31,9 @@ Add the Lombok extension to your IDE
 Wildfly
 
 Use RedHat addon to download, install and run WildFly.
+
+### References
+
+[Arquillian Core](http://arquillian.org/arquillian-core/)
+
+[Arquillian Example](https://github.com/tolis-e/arquillian-wildfly-example)
