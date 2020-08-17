@@ -22,7 +22,7 @@ jobs:
         java-version: 11
     - name: Build with Maven
       # run: mvn -Pwildfly-managed -PrepoToken=${{ secrets.REPO_TOKEN }} package
-      run: mvn -Pwildfly-managed -PrepoToken=${{ secrets.REPO_TOKEN }} cobertura:cobertura coveralls:report
+      run: mvn -Pwildfly-managed -DrepoToken=${{ secrets.REPO_TOKEN }} cobertura:cobertura coveralls:report
     # - name: Coveralls
     #   uses: coverallsapp/github-action@master
     #   with:
