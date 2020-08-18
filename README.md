@@ -29,10 +29,10 @@ sudo apt-get install openjdk-11-jdk
 
 ## Development
 
-Tools:
+Coding tools:
 
-- (Required) You need Lombok installed on your IDE. [All major IDEs are supported](https://projectlombok.org/setup/overview).
-- Add the JBoss/RedHat plugin for Java EE
+- **(Required)** You need Lombok installed on your IDE. [All major IDEs are supported](https://projectlombok.org/setup/overview).
+- Add the JBoss/RedHat Server Connector plugin for your IDE.
 
 
 ## References
