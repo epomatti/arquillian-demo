@@ -7,22 +7,25 @@ import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
 
 import solid.shared.BaseResource;
 
 @Path("/employee")
+@Stateless
 public class EmployeeResource extends BaseResource {
 
 	@Inject
 	private EmployeeService service;
 
 	@POST
-	public Integer createEmployee(CreateEmployeeRequest request) {
-		return service.createEmployee(request.getName(), request.getSalary());
+	public Response createEmployee(CreateEmployeeRequest request) {
+		Integer id = service.createEmployee(request);
+		return Response.ok().entity(id).build();
 	}
 
 	@GET
-	@Path("/all")
+	@Path("all")
 	public List<Employee> getEmployees() {
 		return service.getAllEmployees();
 	}

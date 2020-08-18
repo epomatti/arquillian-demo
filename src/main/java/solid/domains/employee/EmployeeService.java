@@ -15,8 +15,8 @@ public class EmployeeService {
 	@Inject
 	private SecurityService security;
 
-	public Integer createEmployee(String name, Integer salary) {
-		Integer id = repository.creteEmployee(name, salary);
+	public Integer createEmployee(CreateEmployeeRequest request) {
+		Integer id = repository.creteEmployee(request);
 		security.enableAccess(id);
 		return id;
 	}

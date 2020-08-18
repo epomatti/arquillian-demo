@@ -53,7 +53,11 @@ public class EmployeeRepositoryTestCase {
 		utx.begin();
 		em.joinTransaction();
 
-		employeeId = repository.creteEmployee("New Employee", 1000);
+		CreateEmployeeRequest request = new CreateEmployeeRequest();
+		request.setName("New Employee");
+		request.setSalary(1000);
+		
+		employeeId = repository.creteEmployee(request);
 
 		utx.commit();
 		em.clear();

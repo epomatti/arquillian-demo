@@ -13,10 +13,10 @@ public class EmployeeRepository {
 	@Inject
 	private EntityManager em;
 
-	public Integer creteEmployee(String name, Integer salary) {
+	public Integer creteEmployee(CreateEmployeeRequest request) {
 		Employee employee = new Employee();
-		employee.setName(name);
-		employee.setSalary(salary);
+		employee.setName(request.getName());
+		employee.setSalary(request.getSalary());
 		employee.setEnabled(true);
 		em.persist(employee);
 		return employee.getId();
