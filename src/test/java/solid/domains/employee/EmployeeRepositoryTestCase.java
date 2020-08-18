@@ -19,21 +19,16 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import solid.domains.security.Access;
 import solid.shared.ApplicationResources;
-
 
 @RunWith(Arquillian.class)
 public class EmployeeRepositoryTestCase {
 
 	@Deployment
 	public static Archive<?> createDeployment() {
-		return ShrinkWrap.create(WebArchive.class, "test.war")
-				.addPackage(Employee.class.getPackage())
-				.addPackage(Access.class.getPackage())
+		return ShrinkWrap.create(WebArchive.class, "test.war").addPackage(Employee.class.getPackage())
 				.addPackage(ApplicationResources.class.getPackage())
-				.addAsResource("test-persistence.xml", "META-INF/persistence.xml")
-				.addAsWebInfResource("jbossas-ds.xml")
+				.addAsResource("test-persistence.xml", "META-INF/persistence.xml").addAsWebInfResource("jbossas-ds.xml")
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
 
@@ -56,7 +51,7 @@ public class EmployeeRepositoryTestCase {
 		CreateEmployeeRequest request = new CreateEmployeeRequest();
 		request.setName("New Employee");
 		request.setSalary(1000);
-		
+
 		employeeId = repository.creteEmployee(request);
 
 		utx.commit();
@@ -82,7 +77,7 @@ public class EmployeeRepositoryTestCase {
 	public void disableEmployeeTest() throws Exception {
 		Integer disable = repository.disable(employeeId);
 		Assert.assertEquals(1, (int) disable);
-		
+
 		Employee e = em.find(Employee.class, employeeId);
 		Assert.assertFalse(e.getEnabled());
 	}

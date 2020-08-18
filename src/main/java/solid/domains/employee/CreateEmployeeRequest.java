@@ -7,5 +7,5 @@ public class CreateEmployeeRequest {
 
     private String name;
     private Integer salary;
-    
+
 }

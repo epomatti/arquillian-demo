@@ -16,7 +16,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import solid.domains.security.Access;
 import solid.shared.ApplicationResources;
 
 @RunWith(Arquillian.class)
@@ -25,7 +24,7 @@ public class EmployeeResourceTestCase {
     @Deployment
     public static Archive<?> createDeployment() {
         return ShrinkWrap.create(WebArchive.class, "test.war").addPackage(Employee.class.getPackage())
-                .addPackage(Access.class.getPackage()).addPackage(ApplicationResources.class.getPackage())
+                .addPackage(ApplicationResources.class.getPackage())
                 .addAsResource("test-persistence.xml", "META-INF/persistence.xml").addAsWebInfResource("jbossas-ds.xml")
                 .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
     }
