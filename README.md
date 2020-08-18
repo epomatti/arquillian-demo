@@ -1,5 +1,7 @@
 # Arquillian Demo
 
+![build and tests](https://github.com/epomatti/arquillian-demo/workflows/maven/badge.svg)
+
 A demo project for Arquillian with WildFly.
 
 ## Getting Started
