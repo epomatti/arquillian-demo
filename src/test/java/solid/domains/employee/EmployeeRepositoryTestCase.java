@@ -1,5 +1,7 @@
 package solid.domains.employee;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -19,6 +21,7 @@ import org.junit.runner.RunWith;
 
 import solid.domains.security.Access;
 import solid.shared.ApplicationResources;
+
 
 @RunWith(Arquillian.class)
 public class EmployeeRepositoryTestCase {
@@ -78,6 +81,18 @@ public class EmployeeRepositoryTestCase {
 		
 		Employee e = em.find(Employee.class, employeeId);
 		Assert.assertFalse(e.getEnabled());
+	}
+
+	@Test
+	public void deleteEmployeeTest() throws Exception {
+		Integer actual = repository.deleteEmployee(employeeId);
+		Assert.assertEquals(1, (int) actual);
+	}
+
+	@Test
+	public void findAllTest() throws Exception {
+		List<Employee> employees = repository.findAll();
+		Assert.assertEquals(1, (int) employees.size());
 	}
 
 	@After

@@ -2,8 +2,27 @@
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_2.xsd"
    version="2.2">
-   <persistence-unit name="example" transaction-type="JTA">
-   <jta-data-source>jdbc/arquillian</jta-data-source>
+
+   <!-- <persistence-unit name="h2" transaction-type="JTA">
       <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-   </persistence-unit>
+      <jta-data-source>jdbc/arquillian</jta-data-source>
+      <properties>
+          <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
+          <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+          <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+      </properties>
+  </persistence-unit> -->
+
+  <persistence-unit name="test" transaction-type="JTA">
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+      <property name="javax.persistence.jdbc.url"    value="jdbc:h2:mem:test" />
+      <property name="javax.persistence.jdbc.user" value="sa" />
+      <property name="javax.persistence.jdbc.password" value="" />
+      
+      <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+    </properties>
+  </persistence-unit>
+
 </persistence>

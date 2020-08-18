@@ -1,5 +1,7 @@
 package solid.domains.employee;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -28,6 +30,18 @@ public class EmployeeRepository {
 		Query query = em.createNamedQuery("Employee.disable");
 		query.setParameter("id", employeeId);
 		return query.executeUpdate();
+	}
+
+	public Integer deleteEmployee(Integer employeeId) {
+		Query query = em.createNamedQuery("Employee.delete");
+		query.setParameter("id", employeeId);
+		return query.executeUpdate();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Employee> findAll() {
+		Query query = em.createNamedQuery("Employee.findAll");
+		return query.getResultList();
 	}
 
 }
