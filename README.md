@@ -1,41 +1,41 @@
-# arquillian-demo
+# Arquillian Demo
 
-https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html
+A demo project for Arquillian with WildFly.
 
+## Getting Started
 
--DskipTests
-
-## Getting started
+Running with standalone WildFly:
 
 ```
-mvn install
 mvn test
 ```
 
+Or... let Arquillian handle the infrastructure for you 😎
+
+```
+mvn -Pwildfly-managed test
+```
+
+
 ## Setup
 
-Install the JDK
-
-```
-sudo apt-get install openjdk-11-jdk
-```
-
-Install Maven
+You'll need Maven and the JDK
 
 ```
 sudo apt update
 sudo apt install maven
+sudo apt-get install openjdk-11-jdk
 ```
 
-Lombok
+## Development
 
-Add the Lombok extension to your IDE
+Tools:
 
-Wildfly
+- (Required) You need Lombok installed on your IDE. [All major IDEs are supported](https://projectlombok.org/setup/overview).
+- Add the JBoss/RedHat plugin for Java EE
 
-Use RedHat addon to download, install and run WildFly.
 
-### References
+## References
 
 [Arquillian Core](http://arquillian.org/arquillian-core/)
 
