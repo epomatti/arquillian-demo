@@ -6,7 +6,7 @@ A demo project for Arquillian with WildFly.
 
 ## Getting Started
 
-Running with standalone WildFly:
+Running with standalone remote WildFly:
 
 ```
 mvn test
