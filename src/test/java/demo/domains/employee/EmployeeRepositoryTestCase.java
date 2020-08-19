@@ -26,9 +26,11 @@ public class EmployeeRepositoryTestCase {
 
 	@Deployment
 	public static Archive<?> createDeployment() {
-		return ShrinkWrap.create(WebArchive.class, "test.war").addPackage(Employee.class.getPackage())
+		return ShrinkWrap.create(WebArchive.class, "test.war")
+				.addPackage(Employee.class.getPackage())
 				.addPackage(ApplicationResources.class.getPackage())
-				.addAsResource("test-persistence.xml", "META-INF/persistence.xml").addAsWebInfResource("jbossas-ds.xml")
+				.addAsResource("test-persistence.xml", "META-INF/persistence.xml")
+				.addAsWebInfResource("jbossas-ds.xml")
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
 
@@ -69,13 +71,13 @@ public class EmployeeRepositoryTestCase {
 
 	@Test
 	public void getSalaryTest() throws Exception {
-		Integer actual = repository.getSalary(employeeId);
+		Integer actual = repository.getEmployeeSalary(employeeId);
 		Assert.assertEquals(1000, (int) actual);
 	}
 
 	@Test
 	public void disableEmployeeTest() throws Exception {
-		Integer disable = repository.disable(employeeId);
+		Integer disable = repository.disableEmployee(employeeId);
 		Assert.assertEquals(1, (int) disable);
 
 		Employee e = em.find(Employee.class, employeeId);
@@ -90,7 +92,7 @@ public class EmployeeRepositoryTestCase {
 
 	@Test
 	public void findAllTest() throws Exception {
-		List<Employee> employees = repository.findAll();
+		List<Employee> employees = repository.findAllEmployees();
 		Assert.assertEquals(1, (int) employees.size());
 	}
 

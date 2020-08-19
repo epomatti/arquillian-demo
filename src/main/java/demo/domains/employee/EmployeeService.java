@@ -12,20 +12,19 @@ public class EmployeeService {
 	private EmployeeRepository repository;
 
 	public Integer createEmployee(CreateEmployeeRequest request) {
-		Integer id = repository.creteEmployee(request);
-		return id;
+		return repository.creteEmployee(request);
 	}
 
-	public Integer getEmployeeSalary(Integer id) {
-		return repository.getSalary(id);
+	public Integer getEmployeeSalary(Integer employeeId) {
+		return repository.getEmployeeSalary(employeeId);
 	}
 
-	public void layoffEmployee(Integer id) {
-		repository.disable(id);
+	public void layoffEmployee(Integer employeeId) {
+		repository.disableEmployee(employeeId);
 	}
 
 	public List<Employee> getAllEmployees() {
-		return repository.findAll();
+		return repository.findAllEmployees();
 	}
 
 }

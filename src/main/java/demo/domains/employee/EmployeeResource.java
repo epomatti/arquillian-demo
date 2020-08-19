@@ -20,14 +20,15 @@ public class EmployeeResource extends BaseResource {
 
 	@POST
 	public Response createEmployee(CreateEmployeeRequest request) {
-		Integer id = service.createEmployee(request);
-		return Response.ok().entity(id).build();
+		Integer employeeId = service.createEmployee(request);
+		return Response.ok().entity(employeeId).build();
 	}
 
 	@GET
 	@Path("all")
-	public List<Employee> getEmployees() {
-		return service.getAllEmployees();
+	public Response getEmployees() {
+		List<Employee> employees = service.getAllEmployees();
+		return Response.ok().entity(employees).build();
 	}
 
 }

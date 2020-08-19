@@ -22,11 +22,11 @@ public class EmployeeRepository {
 		return employee.getId();
 	}
 
-	public Integer getSalary(Integer id) {
-		return em.find(Employee.class, id).getSalary();
+	public Integer getEmployeeSalary(Integer employeeId) {
+		return em.find(Employee.class, employeeId).getSalary();
 	}
 
-	public Integer disable(Integer employeeId) {
+	public Integer disableEmployee(Integer employeeId) {
 		Query query = em.createNamedQuery("Employee.disable");
 		query.setParameter("id", employeeId);
 		return query.executeUpdate();
@@ -39,7 +39,7 @@ public class EmployeeRepository {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Employee> findAll() {
+	public List<Employee> findAllEmployees() {
 		Query query = em.createNamedQuery("Employee.findAll");
 		return query.getResultList();
 	}
