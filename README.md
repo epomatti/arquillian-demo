@@ -21,7 +21,7 @@ mvn -Pmanaged test
 
 ## Setup
 
-You'll need Maven and the JDK
+You'll need Maven and the JDK:
 
 ```
 sudo apt update
