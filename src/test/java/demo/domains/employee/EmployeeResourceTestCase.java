@@ -1,4 +1,4 @@
-package solid.domains.employee;
+package demo.domains.employee;
 
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
@@ -16,7 +16,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import solid.shared.ApplicationResources;
+import demo.shared.ApplicationResources;
 
 @RunWith(Arquillian.class)
 public class EmployeeResourceTestCase {

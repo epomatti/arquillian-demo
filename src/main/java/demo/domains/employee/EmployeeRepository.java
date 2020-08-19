@@ -1,4 +1,4 @@
-package solid.domains.employee;
+package demo.domains.employee;
 
 import java.util.List;
 

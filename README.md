@@ -15,7 +15,7 @@ mvn test
 Or... let Arquillian handle the infrastructure for you 😎
 
 ```
-mvn -Pwildfly-managed test
+mvn -Pmanaged test
 ```
 
 

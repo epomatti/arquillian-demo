@@ -1,4 +1,4 @@
-package solid.domains.employee;
+package demo.domains.employee;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
-import solid.shared.BaseResource;
+import demo.shared.BaseResource;
 
 @Path("/employee")
 @Stateless

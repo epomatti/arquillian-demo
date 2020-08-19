@@ -1,4 +1,4 @@
-package solid.shared;
+package demo.shared;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
