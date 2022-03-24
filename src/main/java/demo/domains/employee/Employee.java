@@ -22,9 +22,7 @@ public class Employee {
 	private Integer id;
 
 	private String name;
-
 	private Integer salary;
-
 	private Boolean enabled;
 
 }
