@@ -25,8 +25,7 @@ You'll need Maven and the JDK:
 
 ```
 sudo apt update
-sudo apt install maven
-sudo apt-get install openjdk-11-jdk
+sudo apt install maven openjdk-11-jdk
 ```
 
 ## Development

@@ -16,7 +16,7 @@
 
     <container qualifier="managed">
         <configuration>
-            <property name="jbossHome">target/wildfly-20.0.1.Final</property>
+            <property name="jbossHome">target/wildfly-26.0.1.Final</property>
         </configuration>
     </container>
 
